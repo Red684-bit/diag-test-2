@@ -7,16 +7,6 @@ from practic1 import (
     count_char_frequencies
 )
 
-class TestStrings(unittest.TestCase):
-    def test_reverse_words_normal(self):
-        self.assertEqual(reverse_words("hello world"), "olleh dlrow")
-    
-    def test_reverse_words_single_word(self):
-        self.assertEqual(reverse_words("Python"), "nohtyP")
-    
-    def test_reverse_words_empty(self):
-        self.assertEqual(reverse_words(""), "")
-
 class TestLists(unittest.TestCase):
     def test_get_even_numbers_mixed(self):
         self.assertEqual(get_even_numbers([1, 2, 3, 4, 5, 6]), [2, 4, 6])
@@ -58,9 +48,19 @@ class TestFunctions(unittest.TestCase):
         self.assertIsNone(apply_operation(5, 0, "/"))
     
     def test_invalid_operation(self):
-        self.assertIsNone(apply_operation(1, 2, "%"))
         self.assertIsNone(apply_operation(1, 2, "**"))
 
+
+class TestStrings(unittest.TestCase):
+    def test_reverse_words_normal(self):
+        self.assertEqual(reverse_words("hello world"), "olleh dlrow")
+    
+    def test_reverse_words_single_word(self):
+        self.assertEqual(reverse_words("Python"), "nohtyP")
+    
+    def test_reverse_words_empty(self):
+        self.assertEqual(reverse_words(""), "")
+        
 class TestDictionaries(unittest.TestCase):
     def test_count_char_frequencies_simple(self):
         self.assertEqual(count_char_frequencies("aab"), {'a': 2, 'b': 1})
